@@ -184,6 +184,30 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+/* Shape variants */
+.hero-photo.shape-circle {
+  height: 300px;
+  border-radius: 50%;
+}
+
+.hero-photo-frame {
+  position: relative;
+  padding: 14px 0 0 14px;
+}
+.hero-photo-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--color-gold-light);
+  border-radius: 8px;
+}
+.hero-photo.shape-framed {
+  border-radius: 8px;
+}
+
 @media (max-width: 700px) {
   .page-hero .hero-grid {
     grid-template-columns: 1fr;
@@ -193,6 +217,14 @@ img { max-width: 100%; display: block; }
   .hero-photo {
     max-width: 260px;
     height: 300px;
+    margin: 0 auto;
+  }
+  .hero-photo.shape-circle {
+    width: 260px;
+    height: 260px;
+  }
+  .hero-photo-frame {
+    max-width: 260px;
     margin: 0 auto;
   }
 }
